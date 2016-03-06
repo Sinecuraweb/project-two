@@ -1,0 +1,60 @@
+@import "compass";
+@import "compass/reset";
+
+/*=========================MIXINS=========*/
+
+@import "_misc/mixins";
+
+
+/*=====================ADJUSTMENT=======*/
+
+@import "_misc/adjustment";
+
+
+/*====================FONTS=======*/
+
+@import "_misc/_fonts";
+
+
+/*====================SECTIONS=======*/
+
+@import "sections/_header";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin media($width) {
+	@media (max-width: $width) {
+		@content
+	}
+}
+
+.break {
+	@include media(765px) {
+		color: red;
+	}
+
+	@include media(320px) {
+		color: green;
+	}
+}
+
+.another {
+	@include media(1200px) {
+		width: 100%;
+	}
+}

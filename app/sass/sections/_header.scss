@@ -1,0 +1,42 @@
+.header{
+  background: #fff;
+}
+
+/*=============HEADER-TOP*/
+
+.header__top{
+  border-bottom:1px solid #ebedef;
+  padding: 23px 0;
+}
+
+.social__item{
+  @include inlineblock(middle);
+  margin-left:12px;
+
+  &:first-child{
+    margin-left:0;
+  }
+}
+
+.socials__link{
+  display: block;
+  height: 26px;
+  @include border-radius(50%);
+  background: #333333;
+  position: relative;
+}
+
+.socials__icon{
+  @include absolute-center;
+}
+
+$socials: fb, vk, tw;
+$socials-map:sprite-map('img/socials/*.png');
+
+@each $socials in socials{
+  .social__item_#{$social} {
+    .socials__icon {
+      @include get-sprite($socials-map,social);
+    }
+  }
+}

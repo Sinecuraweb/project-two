@@ -1,0 +1,153 @@
+
+.class {
+	color: red;
+
+	.dependent {
+		background: blue;
+	}
+}
+
+.class {
+	border: 1px solid red;
+
+	&:hover {
+		color: red;
+	}
+
+	&:after {
+		content: "";
+	}
+
+	&:before {
+
+	}
+}
+
+$width: 100px;
+
+.width {
+	$width: 50px + 70;
+
+	width: $width;
+}
+
+@function inc($param) {
+	$result : $param + 10px;
+
+	@debug $result;
+
+	@return $result;
+}
+
+.class {
+	width: inc(20px);
+}
+
+//@mixin border-radius($radius : 5px) {
+//	-webkit-border-radius: $radius;
+//	-moz-border-radius: $radius;
+//	border-radius: $radius;
+//}
+//
+//.rad {
+//	@include border-radius(10px);
+//}
+
+
+@mixin transition($transitions...) {
+	-webkit-transition: $transitions;
+	-moz-transition: $transitions;
+	-ms-transition: $transitions;
+	-o-transition: $transitions;
+	transition: $transitions;
+}
+
+.anim {
+	@include transition(color .3s, background .2s)
+}
+
+@mixin input($width: 300px) {
+	border: 1px solid red;
+
+	@if $width > 300px {
+		text-align: left;
+	}
+
+	@if $width < 300px {
+		text-align: center;
+	}
+}
+
+
+.input {
+	@include input(200px);
+}
+
+.soc__link {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+$socials: fb, tw, vk, gh;
+
+@each $item in $socials {
+	.soc__link_#{$item} {
+		background-image: url('/img/icons/#{$item}.png');
+	}
+}
+
+
+.btn {
+	background: red;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+
+.btn-small {
+	@extend .btn;
+	width: 10px;
+}
+
+@mixin clearfix {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+%clearfix {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.columned {
+	@extend %clearfix;
+	//@include clearfix;
+}
+
+.floated {
+	@extend %clearfix;
+	//@include clearfix;
+}
+
+.class {
+	.inner {
+		.inner {
+
+		}
+	}
+}

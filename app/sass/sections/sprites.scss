@@ -1,0 +1,31 @@
+.soc__link {
+	display: block;
+}
+
+
+//$socials-layout: horizontal;
+//$socials-spacing: 70px;
+//@import "socials/*.png";
+//
+//$socials: vk, fb, tw;
+//
+//@each $item in $socials {
+//	.soc__link_#{$item} {
+//		@include socials-sprite($item);
+//		$height : socials-sprite-height($item);
+//		$width : socials-sprite-width($item);
+//		width: $width;
+//		height: $height;
+//	}
+//}
+
+$socials: vk, fb, tw;
+$map : sprite-map('socials/*.png', $spacing: 70px);
+
+@each $item in $socials {
+	.soc__link_#{$item} {
+		@include get-sprite($map, $item);
+	}
+}
+
+

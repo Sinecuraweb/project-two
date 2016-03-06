@@ -1,0 +1,64 @@
+.class {
+  color: red; }
+  .class .dependent {
+    background: blue; }
+
+.class {
+  border: 1px solid red; }
+  .class:hover {
+    color: red; }
+  .class:after {
+    content: ""; }
+
+.width {
+  width: 120px; }
+
+.class {
+  width: 30px; }
+
+.anim {
+  -webkit-transition: color 0.3s, background 0.2s;
+  -moz-transition: color 0.3s, background 0.2s;
+  -ms-transition: color 0.3s, background 0.2s;
+  -o-transition: color 0.3s, background 0.2s;
+  transition: color 0.3s, background 0.2s; }
+
+.input {
+  border: 1px solid red;
+  text-align: center; }
+
+.soc__link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.soc__link_fb {
+  background-image: url("/img/icons/fb.png"); }
+
+.soc__link_tw {
+  background-image: url("/img/icons/tw.png"); }
+
+.soc__link_vk {
+  background-image: url("/img/icons/vk.png"); }
+
+.soc__link_gh {
+  background-image: url("/img/icons/gh.png"); }
+
+.btn, .btn-small {
+  background: red;
+  width: 100px;
+  height: 100px;
+  text-align: center; }
+
+.btn-small {
+  width: 10px; }
+
+.columned:before, .floated:before, .columned:after, .floated:after {
+  content: "";
+  display: table; }
+.columned:after, .floated:after {
+  clear: both; }
+
+/*# sourceMappingURL=style.css.map */
